@@ -1,0 +1,15 @@
+{{#component 'nav-bar' currentUser=session.currentUser
+             goPeriodBack=(action 'goPeriodBack') goPeriodNext=(action 'goPeriodNext')
+             prevPeriod=prevPeriod nextPeriod=nextPeriod
+             logout=(action 'logout')
+}}
+  {{period-in-words period}}
+{{/component}}
+
+{{side-bar sumDifference=sumDifference expenseSum=expenseSum incomeSum=incomeSum}}
+
+<div class="main">
+  {{outlet}}
+</div>
+
+{{global-links}}

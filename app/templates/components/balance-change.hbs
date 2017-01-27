@@ -1,0 +1,14 @@
+<span class="balance-change-field">
+  {{balanceChange.entryDate}}
+</span>
+<span class="balance-change-field">
+  {{money balanceChange.value}}
+</span>
+<span class="balance-change-field">
+  {{#link-to (concat 'dashboard.' balanceChange.changeType 's.edit') balanceChange class="button"}}
+    edit
+  {{/link-to}}
+  <button {{action (action delete balanceChange)}}>
+    x
+  </button>
+</span>

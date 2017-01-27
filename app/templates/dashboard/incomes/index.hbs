@@ -1,0 +1,24 @@
+<h1>Incomes</h1>
+
+<p> Incomes: ({{incomes.length}}) </p>
+{{#if incomes}}
+  <ul class="balance-change-list">
+    <li class="balance-change-sorters">
+ <span class="balance-change-field">
+ Date
+ </span>
+      <span class="balance-change-field">
+ income
+ </span>
+    </li>
+    {{#each incomes as |income|}}
+      {{balance-change
+        tagName="li"
+        balanceChange=income
+        delete=(action delete)
+      }}
+    {{/each}}
+  </ul>
+{{else}}
+  No incomes for selected period.
+{{/if}}

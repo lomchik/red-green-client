@@ -1,0 +1,30 @@
+<h1>Expenses</h1>
+
+<p> Expenses: ({{expenses.length}}) </p>
+
+{{#link-to 'dashboard.expenses.new' class="button"}}
+  Add
+{{/link-to}}
+
+{{#if expenses}}
+  <ul class="balance-change-list">
+    <li class="balance-change-sorters">
+ <span class="balance-change-field">
+ Date
+ </span>
+    <span class="balance-change-field">
+    Expense
+   </span>
+    </li>
+    {{#each expenses as |expense|}}
+      {{balance-change
+        tagName="li"
+        balanceChange=expense
+        currencySymbol=session.currentUser.currencySymbol
+        delete=(action delete)
+      }}
+    {{/each}}
+  </ul>
+{{else}}
+  No expenses for selected period.
+{{/if}}

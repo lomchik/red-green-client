@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="navbar-period">
+
+    {{#link-to 'dashboard' (query-params period=prevPeriod)}}
+      {{prevPeriod}} &#60;
+    {{/link-to}}
+    <button {{action (action goPeriodBack) }}>
+      &#60;
+    </button>
+    <span class="period-title">
+      {{yield}}
+    </span>
+
+    <button {{action (action goPeriodNext) }}>
+      >
+    </button>
+    {{#link-to 'dashboard' (query-params period=nextPeriod)}}
+      > {{nextPeriod}}
+    {{/link-to}}
+  </div>
+  <div class="user-actions">
+    {{#link-to 'dashboard.settings'}}
+      {{currentUser.email}}
+    {{/link-to}}
+    <button {{action (action logout)}}>
+      Sign out
+    </button>
+  </div>
+</nav>

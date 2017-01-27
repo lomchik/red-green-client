@@ -1,0 +1,21 @@
+{{pikaday-input value=valueForDate format="YYYY-MM-DD"}}
+<input value={{valueForInput}} oninput={{action 'updateValueFromInput' value="target.value"}} type="number" autofocus />
+{{currencySymbol}}
+
+<button {{action (action save balanceChangeData)}}
+  class="{{ if notValid 'invalid' 'valid' }}"
+  disabled={{notValid}}>
+  save
+</button>
+{{#if valueIsNegative }}
+  <p class="red">
+    Value must be positive number.
+  </p>
+{{/if}}
+
+{{#each balanceChange.errors as |error|}}
+  <p>
+    {{error.attribute}}:
+    {{error.message}}
+  </p>
+{{/each}}
