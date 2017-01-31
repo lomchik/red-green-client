@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   },
   formatValue(value) {
     // take cents and turn it into display value for input
-    return accounting.formatMoney(value / 100, "");
+    return accounting.formatMoney(value / 100, '');
   },
   unformatInput(input) {
     // take the user input and turn it into cents

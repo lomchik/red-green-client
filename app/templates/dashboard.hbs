@@ -9,7 +9,15 @@
 {{side-bar sumDifference=sumDifference expenseSum=expenseSum incomeSum=incomeSum}}
 
 <div class="main">
+  <button {{action 'showNewModal'}}>open modal </button>
+
   {{outlet}}
 </div>
 
-{{global-links}}
+{{global-links showModal=(action 'openNewBalanceModal')}}
+
+{{#if showModalDialog}}
+  {{#modal-dialog close="closeNewBalanceModal"}}
+    {{balance-change-form save=(action 'save') balanceChange=balanceChange}}
+  {{/modal-dialog}}
+{{/if}}

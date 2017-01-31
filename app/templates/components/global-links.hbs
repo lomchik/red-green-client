@@ -1,12 +1,11 @@
 <div class="action-blocks">
+  {{!--
   {{#link-to 'dashboard.incomes.new' class="action-block action-block-plus"}}
-    <span class="action-block-sign">
- +
- </span>
+    <span class="action-block-sign">+</span>
   {{/link-to}}
+--}}
   {{#link-to 'dashboard.expenses.new' class="action-block action-block-minus"}}
-    <span class="action-block-sign">
- -
- </span>
+    <span class="action-block-sign">-</span>
   {{/link-to}}
+  <a class="action-block action-block-plus" {{action (action showModal 'income')  }}><span class="action-block-sign">+</span></a>
 </div>

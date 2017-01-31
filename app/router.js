@@ -12,7 +12,7 @@ Router.map(function() {
   this.route('dashboard', {path: '/'}, function() {
     this.route('overview');
     this.route('incomes', function() {
-      this.route('edit', {path: 'edit/:balance_change_id'});
+      this.route('edit', {path: ':balance_change_id/edit'});
       this.route('new');
     });
     this.route('expenses', function() {
